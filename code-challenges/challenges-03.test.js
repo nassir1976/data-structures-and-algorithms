@@ -231,10 +231,10 @@ const sortPeopleBetter = (arr) => {
   // Solution code here...
   arr.sort((a, b) => {
     if (a.lastName.age > b.lastName.age) {
-      return 1;
+      return -1;
 
     } else if (a.lastName.age < b.lastName.age) {
-      return -1;
+      return 1;
 
 
     } else {
