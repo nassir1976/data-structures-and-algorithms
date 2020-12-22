@@ -44,6 +44,7 @@ For example:
 const isNum = (input) => {
   // Solution code here...
   let num = /\d/;
+
   return num.test(input);
 };
 
@@ -76,7 +77,15 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
+  const city = /^[A-J] \w*/g;
+  const arrOfCity = [];
+  arr.forEach(element => {
+    if (element.match(city))
+      arrOfCity.push(element);
+  });
+  return arrOfCity;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
@@ -92,7 +101,8 @@ Do not use the vertical bar (pipe) in your pattern.
 
 const matchMonth = (input) => {
   // Solution code here...
-};
+ const regex = /^[oO]ct(ober)?$/;
+ return regex.test(input) ? true :false;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
