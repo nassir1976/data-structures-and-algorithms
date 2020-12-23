@@ -46,6 +46,7 @@ const isNum = (input) => {
   let num = /\d/;
 
   return num.test(input);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -65,6 +66,8 @@ const isCapitalized = (str) => {
   } else {
     return [];
   }
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -75,8 +78,7 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
-  
-  const city = /^[A-J] \w*/g;
+  const city = /^\b[A-J]\w*/;
   const arrOfCity = [];
   for( let i =0 ; i < arr.length; i++){
     if (city.test(arr[i])){
@@ -85,7 +87,6 @@ const citiesAtoJ = (arr) => {
   }
 
   return arrOfCity;
-
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -102,10 +103,7 @@ Do not use the vertical bar (pipe) in your pattern.
 
 const matchMonth = (input) => {
   // Solution code here...
-
- const regex = /^[oO]ct(ober)?$/;
- return regex.test(input)?true :false;
-
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
