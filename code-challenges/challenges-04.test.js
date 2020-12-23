@@ -99,7 +99,10 @@ Do not use the vertical bar (pipe) in your pattern.
 
 const matchMonth = (input) => {
   // Solution code here...
-};
+
+ const regex = /^[oO]ct(ober)?$/;
+ return regex.test(input)?true :false;
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
