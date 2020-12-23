@@ -27,7 +27,7 @@ const generateSubmitButton = () => {
   let $button = $('<button>submit</button>');
   $('form').append($button);
 
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
