@@ -23,11 +23,7 @@ let $ = createSnippetWithJQuery(`
 `);
 
 const generateSubmitButton = () => {
-<<<<<<< HEAD
-  // Solution code here...let $button = $('<button>submit</button>');
-=======
   // Solution code here...
->>>>>>> b70c4b22c82a6927a5fc6d8d8871dd18a8fca5e8
   let $button = $('<button>submit</button>');
   $('form').append($button);
 
@@ -79,12 +75,8 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
-<<<<<<< HEAD
-  const city = /^\b[A-J]\w*/;
-=======
   
   const city = /^[A-J] \w*/g;
->>>>>>> b70c4b22c82a6927a5fc6d8d8871dd18a8fca5e8
   const arrOfCity = [];
   for( let i =0 ; i < arr.length; i++){
     if (city.test(arr[i])){
@@ -110,14 +102,10 @@ Do not use the vertical bar (pipe) in your pattern.
 
 const matchMonth = (input) => {
   // Solution code here...
-<<<<<<< HEAD
-};
-=======
 
  const regex = /^[oO]ct(ober)?$/;
  return regex.test(input)?true :false;
 
->>>>>>> b70c4b22c82a6927a5fc6d8d8871dd18a8fca5e8
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
