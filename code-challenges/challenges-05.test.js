@@ -37,11 +37,36 @@ let $ = createSnippetWithJQuery(`
 `);
 
 const templateWithJQuery = () => {
-  // Solution code here//
+  // Solution code here...
+  // let $sectionTemplate = $('#template');
+  // starWarsPeople.forEach(value => {
+  //   let $newSection = $sectionTemplate.clone;
+  //   let $name = $newSection.find('h2');
+  //   let $height = $newSection.find('h3');
+  //   let $eye_color = $newSection.find('p');
 
+  //   $name.text(value.name);
+  //   $height.text(value.height);
+  //   $eye_color.text(value.eye_color);
+
+  //   $('main').append('newSection');
+
+  // });
+  starWarsPeople.forEach(person =>{
+    
+    const $person = $('#template').clone();
+    $person.find('h2').text(person.name);
+    $person.find('h3').text(person.height);
+    $person.find('p').text(person.eye_color);
+    $person.removeAttr('id');
+
+    $('main').append($person);
+
+  });
 
 
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -59,10 +84,11 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
-  for (let i =0; i< str.length+1 ;i++){
+  for (let i = 0; i < str.length + 1; i++) {
     const remove = str.slice(i, str.length);
     result.push(remove);
   }
+
   return result;
 };
 
@@ -124,11 +150,14 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
-  recipe.ingredients.forEach((value) =>{
-    let much = value.slice(value.indexOf('')+1);
-    let many  = much.slice(much.indexOf('')+1);
-    result.push(many);
-  });
+
+  for (let i= 0; i < recipe.ingredients.length; i++){
+    let currentWord = recipe.ingredients[i];
+    let space = currentWord.indexOf(' ');
+    let secondSpace = currentWord.indexOf(' ',(space +1));
+    let sliceWord = currentWord.slice(secondSpace+ 1);
+    result.push(sliceWord);
+  }
   return result;
 };
 
@@ -208,18 +237,6 @@ Write a function named totalSumCSV that, given a string of comma-separated value
 const totalSumCSV = (str) => {
   let total = 0;
   // Solution code here...
-  // note:
-  // convert the string to an arry to remove the comas.eg "1,2,3,4,5" convert to [1,2,3,4,5]
-  let newArr = str.split(' ,');
-  // we need to loop throug this input to count each number
-  newArr.forEach(value =>{
-    // add each number to our total ("total ",value)
-    // confirm the "number" we are adding is an integer , not string
-    total = total += parseInt(value);
-
-  });
-
-  // return"total"
   return total;
 };
 
@@ -234,8 +251,6 @@ For example, removeVowels('gregor') returns 'grgr'.
 
 const removeVowels = (str) => {
   // Solution code here...
-
-  return total;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -339,7 +354,7 @@ xdescribe('Testing challenge 8', () => {
   });
 });
 
-describe('Testing challenge 9', () => {
+xdescribe('Testing challenge 9', () => {
   test('It should add up the numbers contained within the string', () => {
     expect(totalSumCSV('1,4,5,7,2')).toStrictEqual(19);
     expect(totalSumCSV('147')).toStrictEqual(147);
@@ -365,6 +380,6 @@ xdescribe('Testing challenge 11', () => {
 });
 
 
-function createSnippetWithJQuery(html){
+function createSnippetWithJQuery(html) {
   return cheerio.load(html);
 };
