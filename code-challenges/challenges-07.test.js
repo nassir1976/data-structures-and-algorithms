@@ -37,6 +37,12 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 const forLoopTwoToThe = (arr) => {
   // Solution code here...
+  const arrA = [];
+  for(let i =0; i< arr.length; i++){
+    let arrB= Math.pow(2,arr[i]);
+    arrA.push(arrB);
+  }
+  return arrA;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -47,6 +53,12 @@ Write a function named forEachTwoToThe that produces the same output as your for
 
 const forEachTwoToThe = (arr) => {
   // Solution code here...
+  const arrA = [];
+  arr.forEach(val =>{
+    let arrB= Math.pow(2,val);
+    arrA.push(arrB);
+  });
+  return arrA;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -57,6 +69,8 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
+  let arrA= arr.map(val=>Math.pow(2,val));
+  return arrA;
 };
 
 /* ------------------------------------------------------------------------------------------------
