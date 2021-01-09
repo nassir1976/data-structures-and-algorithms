@@ -26,6 +26,7 @@ const createServer = () => {
   const app = express();
 
   // Routes go here
+  app.get('/events', getCurrentEvents);
   // Solution code here...
 
   var server = app.listen(3301, function () {
@@ -159,9 +160,9 @@ const currentEvents = {
   ]
 }
 
-function getCurrentEvents(request, response) {
+function getCurrentEvents(req, res) {
   // Solution code here...
-  return response.send(currentEvents);
+  return res.send(mapCurrentEvents());
 }
 
 const mapCurrentEvents = () => {
@@ -174,13 +175,13 @@ const mapCurrentEvents = () => {
 function Event(obj) {
   // Solution code here...
   this.author = obj.author;
-  this.categories = obj.categories;
+  this.categories = obj.category;
   this.summary = obj.summary;
   this.img_url = obj.img_url;
   this.date = obj.data;
   this.title = obj.title;
 }
-
+// getCurrentEvents();
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
