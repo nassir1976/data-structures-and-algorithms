@@ -8,6 +8,45 @@ Build a simple express server. Connect a '/hello' route that sends a greeting of
 
 const createServer = () => {
   // Solution code here...
+  // bringing dependencies
+  const express = require('express');
+  const cors = require('cors');
+  // starting application
+  const app = express();
+  app.use(cors());
+  // create some routes
+  app.get('/hello', function (request, response) {
+    response.send('hello world!');
+  });
+  // you can do it the above app get like this.
+  // app.get('/hello', helloHandler);
+  // function helloHandler(request, response) {
+  //   response.send('hello');
+  // }
+
+
+  app.get('/aboutme', aboutmeHandler);
+
+  function aboutmeHandler(request, response) {
+    response.send('matt is a pilot');
+  }
+  app.get('/favoritefoods', favoritefoodHandler);
+
+  function favoritefoodHandler(request, response) {
+    response.send(['pizza', 'burgers', 'injera']);
+  }
+  app.get('/error', errorHandler);
+
+  function errorHandler(request, response) {
+    response.status(404).send('not found');
+  }
+
+
+
+
+
+
+
 
   var server = app.listen(3301, function () {
     var port = server.address().port;
