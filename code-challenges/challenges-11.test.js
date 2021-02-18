@@ -88,6 +88,9 @@ Return either true or false.
 
 const validatePhoneNumber = (phoneNumber) => {
   // Solution code here...
+
+  let validphone =\d\d\d[-.]\d\d\d[-.]\d\d\d\d;
+  return validphone.match(validatePhoneNumber)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -190,7 +193,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return the closing tags', () => {
     expect(findTagNames(['<h1>Hello, world!</h1>', '<p>Welcome to my site</p>'])).toStrictEqual(['/h1', '/p']);
   });

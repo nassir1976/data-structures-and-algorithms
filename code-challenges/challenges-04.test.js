@@ -103,6 +103,8 @@ Do not use the vertical bar (pipe) in your pattern.
 
 const matchMonth = (input) => {
   // Solution code here...
+  const regex = /^[Oo]ct(ober)?$/;
+  return regex.test(input) ? true : false;
 };
 
 /* ------------------------------------------------------------------------------------------------
