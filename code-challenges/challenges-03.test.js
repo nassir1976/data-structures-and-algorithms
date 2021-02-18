@@ -115,20 +115,20 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 
 const alphabetizeBetter = (arr) => {
   // Solution code here...
-  arr.sort((a, b) => {
-    if (a.toLowerCase() > b.toLowerCase()) {
-      return;
-    } else if (a.toLowerCase() < b.toLowerCase()) {
-      return -1;
-    } else {
-      return 0;
-    }
-  });
-  return arr;
-};
-//   arr.sort((a, b) => a.toLowerCase() > b.toLowerCase());
+//   arr.sort((a, b) => {
+//     if (a.toLowerCase() > b.toLowerCase()) {
+//       return;
+//     } else if (a.toLowerCase() < b.toLowerCase()) {
+//       return -1;
+//     } else {
+//       return 0;
+//     }
+//   });
 //   return arr;
 // };
+  arr.sort((a, b) => a.toLowerCase() > b.toLowerCase());
+  return arr;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
@@ -180,6 +180,7 @@ const sortNumbersByLength = (arr) => {
     }
   });
   return arr;
+
 };
 
 /*-----------------------------------------------------------------------------------------------
@@ -215,6 +216,8 @@ const sortPeople = (arr) => {
     }
   });
   return arr;
+  
+
 };
 
 /* ------------------------------------------------------------------------------------------------
