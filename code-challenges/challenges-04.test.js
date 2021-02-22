@@ -103,8 +103,8 @@ Do not use the vertical bar (pipe) in your pattern.
 
 const matchMonth = (input) => {
   // Solution code here...
-  const regex = /^[Oo]ct(ober)?/;
-  return regex.test(input) ? true : false;
+  const regex = /\b[Oo]ct(ober)?\b/;
+  return regex.test(input);
   
 };
 
@@ -120,8 +120,9 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 
 const noPunctuation = str => {
   // Solution code here...
-  let space = /\W+\s/g;
-  return str.match(space);
+  const string = str.replace('(');
+  const regex = /\b\w+\s\b/gm;
+  return string.match(regex);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -139,7 +140,7 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 let hangman = (str) => {
   // Solution code here...
   let remove = /[AEIOUaeiou]/g;
-  return str.replace(remove, '-');
+  return str.replace(remove, '_');
 };
 
 /* ------------------------------------------------------------------------------------------------
