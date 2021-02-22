@@ -37,11 +37,36 @@ let $ = createSnippetWithJQuery(`
 `);
 
 const templateWithJQuery = () => {
-  // Solution code here//
+  // Solution code here...
+  // let $sectionTemplate = $('#template');
+  // starWarsPeople.forEach(value => {
+  //   let $newSection = $sectionTemplate.clone;
+  //   let $name = $newSection.find('h2');
+  //   let $height = $newSection.find('h3');
+  //   let $eye_color = $newSection.find('p');
 
+  //   $name.text(value.name);
+  //   $height.text(value.height);
+  //   $eye_color.text(value.eye_color);
+
+  //   $('main').append('newSection');
+
+  // });
+  starWarsPeople.forEach(person => {
+
+    const $person = $('#template').clone();
+    $person.find('h2').text(person.name);
+    $person.find('h3').text(person.height);
+    $person.find('p').text(person.eye_color);
+    $person.removeAttr('id');
+
+    $('main').append($person);
+
+  });
 
 
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -59,10 +84,11 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
-  for (let i =0; i< str.length+1 ;i++){
+  for (let i = 0; i < str.length + 1; i++) {
     const remove = str.slice(i, str.length);
     result.push(remove);
   }
+
   return result;
 };
 
@@ -124,11 +150,14 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
-  recipe.ingredients.forEach((value) =>{
-    let much = value.slice(value.indexOf('')+1);
-    let many  = much.slice(much.indexOf('')+1);
-    result.push(many);
-  });
+
+  for (let i = 0; i < recipe.ingredients.length; i++) {
+    let currentWord = recipe.ingredients[i];
+    let space = currentWord.indexOf(' ');
+    let secondSpace = currentWord.indexOf(' ', (space + 1));
+    let sliceWord = currentWord.slice(secondSpace + 1);
+    result.push(sliceWord);
+  }
   return result;
 };
 
@@ -143,6 +172,9 @@ You may also use other string or array methods.
 const splitFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  recipe.ingredients.map((value) => {
+    result.push(value.split(' ').splice(2).join(' '));
+  });
   return result;
 };
 
@@ -159,6 +191,9 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 const stepActions = (recipe) => {
   let result = [];
   // Solution code here...
+  recipe.steps.forEach((value) => {
+    result.push(value.split(' ')[0]);
+  });
   return result;
 };
 
@@ -177,6 +212,14 @@ For example:
 
 const removeEvenValues = (arr) => {
   // Solution code here...
+  let evenArray = [];
+  arr.forEach((even) => evenArray.push(even));
+  evenArray.forEach((element) => {
+    if (element % 2 === 0) {
+      arr.splice(arr.indexOf(element), 1);
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -195,7 +238,15 @@ removeLastCharacters('Gregor', 9) returns ''
 ------------------------------------------------------------------------------------------------ */
 
 const removeLastCharacters = (str, numberOfCharacters) => {
+
   // Solution code here...
+  if (str.length > numberOfCharacters) {
+    return str.slice(0, str.length - numberOfCharacters);
+  } else if (numberOfCharacters < 0) {
+    return str;
+  } else {
+    return "";
+  }
 };
 
 
@@ -208,18 +259,10 @@ Write a function named totalSumCSV that, given a string of comma-separated value
 const totalSumCSV = (str) => {
   let total = 0;
   // Solution code here...
-  // note:
-  // convert the string to an arry to remove the comas.eg "1,2,3,4,5" convert to [1,2,3,4,5]
-  let newArr = str.split(' ,');
-  // we need to loop throug this input to count each number
-  newArr.forEach(value =>{
-    // add each number to our total ("total ",value)
-    // confirm the "number" we are adding is an integer , not string
-    total = total += parseInt(value);
-
+  let value = str.split(",");
+  value.forEach((input) => {
+    total = total + Number(input);
   });
-
-  // return"total"
   return total;
 };
 
@@ -234,8 +277,8 @@ For example, removeVowels('gregor') returns 'grgr'.
 
 const removeVowels = (str) => {
   // Solution code here...
-
-  return total;
+  let remove = /[AEIOUaeiou]/g;
+  return str.replace(remove, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -250,6 +293,13 @@ Similarly, extractVowels('The quick brown fox') returns ['Th qck brwn fx', 'eioo
 
 const extractVowels = (str) => {
   // Solution code here...
+  let extractVowelsArr = [];
+  let remove = /[AEIOUaeiou]/g;
+  let str2 = str.match(remove);
+  let str3 = str2.join('');
+  extractVowelsArr.push(str.replace(remove,''), str3);
+  return extractVowelsArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -297,20 +347,20 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return a list of foods', () => {
     expect(splitFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return a list of recipe steps', () => {
     expect(stepActions(gruffaloCrumble)).toStrictEqual(['Pre-heat', 'De-prickle', 'Sprinkle', 'Mix', 'Grease', 'Combine', 'Fold', 'Spread', 'Bake']);
     expect(stepActions(gruffaloCrumble).length).toStrictEqual(9);
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should remove the even numbers from the array', () => {
     let list = [1, 2, 3, 4, 5, 6];
     removeEvenValues(list);
@@ -323,7 +373,7 @@ xdescribe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should shorten the string based on the first argument', () => {
     expect(removeLastCharacters('Gregor', 2)).toStrictEqual('Greg');
     expect(removeLastCharacters('Gregor', 2).length).toStrictEqual(4);
@@ -346,7 +396,7 @@ describe('Testing challenge 9', () => {
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should return the string without vowels', () => {
     expect(removeVowels('gregor')).toStrictEqual('grgr');
     expect(removeVowels('gregor').length).toStrictEqual(4);
@@ -355,7 +405,7 @@ xdescribe('Testing challenge 10', () => {
   });
 });
 
-xdescribe('Testing challenge 11', () => {
+describe('Testing challenge 11', () => {
   test('It should return the string without vowels', () => {
     expect(extractVowels('gregor')).toStrictEqual(['grgr', 'eo']);
     expect(extractVowels('gregor').length).toStrictEqual(2);
@@ -365,6 +415,6 @@ xdescribe('Testing challenge 11', () => {
 });
 
 
-function createSnippetWithJQuery(html){
+function createSnippetWithJQuery(html) {
   return cheerio.load(html);
 };
