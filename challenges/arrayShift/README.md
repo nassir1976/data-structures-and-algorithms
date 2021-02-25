@@ -11,7 +11,7 @@ Write a function called insertShiftArray which takes in an array and the value t
 .
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-create a function that takes an array and a value as input and then find the middle point of the index by using for loop and ceil.Maths to round up the middle number to intger .
+create a function that takes an array and a value as input and then find the middle point of the index by using for loop and ceil.Maths to round up the middle number to integer .
 
 ## Solution
 <!-- Embedded whiteboard image -->
