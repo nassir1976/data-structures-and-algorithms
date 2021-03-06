@@ -33,26 +33,7 @@ class LinkedList {
     }
   }
 
-  // toString() {
-  //   let current = this.head;
-  //   let string = '';
-  //   while (current) {
-  //     const currentNode = current.value;
-  //     current = current.next;
-  //     string += `{${currentNode}}->`;
-  //   } string += '{null}';
-  //   return string;
-  // }
-  append(value) {
-    let current = this.head;
-    while (current) {
-      if (current.next === null) {
-        current.next = new Node(value);
-        return;
-      }
-      current = current.next;
-    }
-  }
+
 }
 
 module.exports = LinkedList;
