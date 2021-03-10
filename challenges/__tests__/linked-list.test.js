@@ -88,4 +88,41 @@ describe('test the searching value are with in a linked list', () => {
   });
 });
 
+//===========test appended=============
+describe(' code-challenge-06 testing  append at the end of the linked list', () => {
+  it('should add a new node to the end of the linked list', () => {
+    const ll = new LL;
+    ll.insert(300);
+    ll.insert(200);
+    ll.insert(100);
+    ll.append(400);
+
+    expect(ll.head.next.next.next.value).toEqual(400);
+  });
+});
+// insertbefore
+describe(' code-challenge-06 testing (insertBefore ==> val,newvalue)', () => {
+  it('Can successfully insert a node before the first node of a linked list ', () => {
+    const ll = new LL;
+    ll.insert(300);
+    ll.insert(200);
+    ll.insert(100);
+    ll.append(400);
+
+    expect(ll.head.next.next.next.value).toEqual(400);
+  });
+});
+// insert after
+describe(' code-challenge-06 testing (insertAfter ==> val,newvalue)', () => {
+  it('Can successfully insert a node after the first node of a linked list ', () => {
+    const ll = new LL;
+    ll.insert(300);
+    ll.insert(200);
+    ll.insert(100);
+    ll.append(400);
+
+    expect(ll.head.next.next.next.value).toEqual(400);
+  });
+});
+
 
