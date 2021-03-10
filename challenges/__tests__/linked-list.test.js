@@ -117,15 +117,15 @@ describe('testing  append at the end of the linked list', () => {
 
 
 
-// describe('testing linked list toString function', () => {
-//   it('should a string of the values contained within a linked list', () => {
-//     const ll = new LL;
-//     ll.insert(3);
-//     ll.insert(2);
-//     ll.insert(1);
-//     expect(ll.toString()).toEqual('{1}->{2}->{3}->{null}');
+describe('testing linked list toString function', () => {
+  it('should a string of the values contained within a linked list', () => {
+    const ll = new LL;
+    ll.insert(3);
+    ll.insert(2);
+    ll.insert(1);
+    expect(ll.toString()).toEqual('{1}->{2}->{3}->{null}');
 
-//   });
-// });
+  });
+});
 
 
