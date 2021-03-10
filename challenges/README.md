@@ -112,6 +112,9 @@ create a function that takes an array and a value as input and then find the mid
 
 
   ## Code Challenge: Class 06
+=======
+## Code Challenge: Class 06
+
 
 ## Feature Tasks
 - Write the following methods for the Linked List class:

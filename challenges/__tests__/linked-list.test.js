@@ -87,23 +87,9 @@ describe('test the searching value are with in a linked list', () => {
     expect(ll.includes(900)).toEqual(false);
   });
 });
-//Can properly return a collection of all the values that exist in the linked list
-describe('testing added a collection of new node the value of the existing linked list', () => {
-
-  it(' add a collection of new node the value of the existing linked list ', () => {
-    const ll = new LL;
-    ll.insert(300);
-    ll.insert(200);
-    ll.insert(100);
-    ll.append(400);
-    ll.append(500);
-    expect(ll.head.next.next.next.value).toEqual(400);
-    expect(ll.head.next.next.next.next.value).toEqual(500);
-  });
-});
 
 //===========test appended=============
-describe('testing  append at the end of the linked list', () => {
+describe(' code-challenge-06 testing  append at the end of the linked list', () => {
   it('should add a new node to the end of the linked list', () => {
     const ll = new LL;
     ll.insert(300);
@@ -114,16 +100,27 @@ describe('testing  append at the end of the linked list', () => {
     expect(ll.head.next.next.next.value).toEqual(400);
   });
 });
-
-
-
-describe('testing linked list toString function', () => {
-  it('should a string of the values contained within a linked list', () => {
+// insertbefore
+describe(' code-challenge-06 testing (insertBefore ==> val,newvalue)', () => {
+  it('Can successfully insert a node before the first node of a linked list ', () => {
     const ll = new LL;
-    ll.insert(3);
-    ll.insert(2);
-    ll.insert(1);
-    expect(ll.toString()).toEqual('{1}->{2}->{3}->{null}');
+    ll.insert(300);
+    ll.insert(200);
+    ll.insert(100);
+    ll.append(400);
+
+    expect(ll.head.next.next.next.value).toEqual(400);
+  });
+});
+// insert after
+describe(' code-challenge-06 testing (insertAfter ==> val,newvalue)', () => {
+  it('Can successfully insert a node after the first node of a linked list ', () => {
+    const ll = new LL;
+    ll.insert(300);
+    ll.insert(200);
+    ll.insert(100);
+    ll.append(400);
+
 
   });
 });
