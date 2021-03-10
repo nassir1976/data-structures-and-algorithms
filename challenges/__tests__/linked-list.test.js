@@ -124,5 +124,15 @@ describe(' code-challenge-06 testing (insertAfter ==> val,newvalue)', () => {
 
   });
 });
+describe(' code-challenge-06 testing (insertAfter ==> val,newvalue)', () => {
+  it('Can successfully insert a node after the first node of a linked list ', () => {
+    const ll = new LL;
+    ll.insert(300);
+    ll.insert(200);
+    ll.insert(100);
+    ll.append(400);
 
+    expect(ll.head.next.next.next.value).toEqual(400);
+  });
+});
 
