@@ -121,7 +121,8 @@ create a function that takes an array and a value as input and then find the mid
 - insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
 
 
-## append(value)
+###
+ append(value)
 
 input ====>  head -> [1] -> [3] -> [2] -> X  
      =====> args 5
