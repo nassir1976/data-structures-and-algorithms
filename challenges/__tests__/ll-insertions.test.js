@@ -1,8 +1,8 @@
-
 'use strct';
 
 const Node = require('../linkedList/node.js');
 const LL = require('../linkedList/linked-list.js');
+const LinkedList = require('../linkedList/linked-list.js');
 
 // JEST - RUNNER / ASSERTION LIBRARY -> describe, it, expect
 
@@ -25,7 +25,7 @@ describe('NODE CLASS', () => {
 });
 
 
- // head points to first node
+
 
 describe('test instantiation an empty linked list', () => {
   it('should return a linked list', () => {
@@ -87,6 +87,20 @@ describe('test the searching value are with in a linked list', () => {
     expect(ll.includes(900)).toEqual(false);
   });
 });
+// Can properly return a collection of all the values that exist in the linked list
+describe('testing added a collection of new node the value of the existing linked list', () => {
+
+  it(' add a collection of new node the value of the existing linked list ', () => {
+    const ll = new LL;
+    ll.insert(300);
+    ll.insert(200);
+    ll.insert(100);
+    ll.append(400);
+    ll.append(500);
+    expect(ll.head.next.next.next.value).toEqual(400);
+    expect(ll.head.next.next.next.next.value).toEqual(500);
+  });
+});
 
 //===========test appended=============
 describe(' code-challenge-06 testing  append at the end of the linked list', () => {
@@ -121,8 +135,11 @@ describe(' code-challenge-06 testing (insertAfter ==> val,newvalue)', () => {
     ll.insert(100);
     ll.append(400);
 
-
+    expect(ll.head.next.next.next.value).toEqual(400);
   });
 });
+
+
+
 
 
