@@ -1,8 +1,8 @@
 'use strct';
 
-const Node = require('../ll-insertions/node.js');
+const Node = require('../ll-kth-from-end/node.js');
 
-const LinkedList = require('../ll-insertions/ll-insertions.js');
+const LinkedList = require('../ll-kth-from-end/ll-kth-from-end.js');
 
 
 // JEST - RUNNER / ASSERTION LIBRARY -> describe, it, expect
@@ -137,7 +137,7 @@ describe('testing linked list insertBefore function', () => {
     expect(ll.head.next.next.value).toEqual(7);
   });
 });
-
+//insert after
 describe('testing linked list insertAfter function', () => {
   it('should add a new node after a target value that is a middle node in the list', () => {
     const ll = new LinkedList;
@@ -159,6 +159,54 @@ describe('testing linked list insertAfter function', () => {
     expect(ll.head.next.next.next.value).toEqual(4);
   });
 });
+//=============code-chllenge-7  ==========
+describe('testing linked list kthFromEnd function', () => {
+  it('should return invalid input string if k is greater than the length of the list', () => {
+    const ll = new LinkedList;
+    ll.insert(4);
+    ll.insert(3);
+    ll.insert(2);
+    ll.insert(1);
+    expect(ll.kthFromEnd(5)).toEqual('Invalid Input Number');
+  });
+
+  it('should return invalid input string if k is the length of the list because index starts at 0', () => {
+    const ll = new LinkedList;
+    ll.insert(4);
+    ll.insert(3);
+    ll.insert(2);
+    ll.insert(1);
+
+    expect(ll.kthFromEnd(4)).toEqual('Invalid Input Number');
+  });
+
+  it('should return invalid input string if k is a negative number', () => {
+    const ll = new LinkedList;
+    ll.insert(4);
+    ll.insert(3);
+    ll.insert(2);
+    ll.insert(1);
+
+    expect(ll.kthFromEnd(-2)).toEqual('Invalid Input Number');
+  });
+
+  it('should return the only value if the linked list has one node and k = 0', () => {
+    const ll = new LinkedList;
+    ll.insert(1);
+
+    expect(ll.kthFromEnd(0)).toEqual(1);
+  });
+
+  it('should find the value 2 places from the end if k = 2', () => {
+    const ll = new LinkedList;
+    ll.insert(4);
+    ll.insert(3);
+    ll.insert(2);
+    ll.insert(1);
+    expect(ll.kthFromEnd(2)).toEqual(2);
+  });
+});
+
 
 
 

@@ -151,3 +151,20 @@ Output=======>head -> [1] -> [3] -> [5] -> [2] -> X
 input =======> head -> [1] -> [3] -> [2] -> X
 args ========> 1, 5 this means add the new value 5 after  node 1 
 output ======> head -> [1] -> [5] -> [3] -> [2] -> X
+
+
+
+## Code Challenge: Class 07
+
+# Feature Tasks
+
+- Write a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list. You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenge
+
+
+### ll.kthFromEnd(k)
+
+Input ll	Arg k	Output                    Arg k      Output 
+- head -> [1] -> [3] -> [8] -> [2] -> X	   0	=======> 2
+- head -> [1] -> [3] -> [8] -> [2] -> X	   2	=======> 3
+- head -> [1] -> [3] -> [8] -> [2] -> X	   6	=======> Exception
+
