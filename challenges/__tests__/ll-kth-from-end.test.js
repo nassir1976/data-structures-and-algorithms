@@ -103,6 +103,8 @@ describe('testing added a collection of new node the value of the existing linke
   });
 });
 
+
+// ====== code challenge 06 ==========
 //===========test appended=============
 describe(' code-challenge-06 testing  append at the end of the linked list', () => {
   it('should add a new node to the end of the linked list', () => {
@@ -159,51 +161,45 @@ describe('testing linked list insertAfter function', () => {
     expect(ll.head.next.next.next.value).toEqual(4);
   });
 });
+
+
 //=============code-chllenge-7  ==========
+
+
 describe('testing linked list kthFromEnd function', () => {
-  it('should return invalid input string if k is greater than the length of the list', () => {
+  it('return invalid value when "k" is greater than the length of the linked list', () => {
     const ll = new LinkedList;
     ll.insert(4);
     ll.insert(3);
     ll.insert(2);
     ll.insert(1);
-    expect(ll.kthFromEnd(5)).toEqual('Invalid Input Number');
+    expect(ll.kthFromEnd(5)).toEqual('invalid value use');
   });
-
-  it('should return invalid input string if k is the length of the list because index starts at 0', () => {
-    const ll = new LinkedList;
-    ll.insert(4);
-    ll.insert(3);
-    ll.insert(2);
-    ll.insert(1);
-
-    expect(ll.kthFromEnd(4)).toEqual('Invalid Input Number');
-  });
-
-  it('should return invalid input string if k is a negative number', () => {
+  //Where k and the length of the list are the same
+  it('index start with zero so index greater than length of the list so the out put is invalid', () => {
     const ll = new LinkedList;
     ll.insert(4);
     ll.insert(3);
     ll.insert(2);
     ll.insert(1);
 
-    expect(ll.kthFromEnd(-2)).toEqual('Invalid Input Number');
+    expect(ll.kthFromEnd(4)).toEqual('invalid value use');
   });
-
-  it('should return the only value if the linked list has one node and k = 0', () => {
-    const ll = new LinkedList;
-    ll.insert(1);
-
-    expect(ll.kthFromEnd(0)).toEqual(1);
-  });
-
-  it('should find the value 2 places from the end if k = 2', () => {
+  // Where k is not a positive integer
+  it('when k is negative number invalid out put ', () => {
     const ll = new LinkedList;
     ll.insert(4);
     ll.insert(3);
     ll.insert(2);
     ll.insert(1);
-    expect(ll.kthFromEnd(2)).toEqual(2);
+
+    expect(ll.kthFromEnd(-2)).toEqual('invalid value use');
+  });
+  //  Where the linked list is of a size 1
+  it('if k =0 should return only one value in the linked list', () => {
+    const ll = new LinkedList;
+    ll.insert(5);
+    expect(ll.kthFromEnd(0)).toEqual(5);
   });
 });
 

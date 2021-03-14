@@ -103,7 +103,7 @@ class LinkedList {
     }
     llArray.reverse();
     if ( k >= llArray.length || k < 0){
-      return 'Invalid Input Number';
+      return 'invalid value use';
     }else{
       return llArray[k];
     }
