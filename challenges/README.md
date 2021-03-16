@@ -197,3 +197,7 @@ Since it’s the first and only node in the merged list, it will also be the tai
 Then move head1 one step forward.
 <!-- Embedded whiteboard image -->
 ![WhiteBoard](./assets/mergetwoLL.png)
+
+### whiteboard 
+
+![WhiteBoard](./assets/ll-zip.jpg)
