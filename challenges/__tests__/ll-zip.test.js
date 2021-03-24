@@ -1,5 +1,5 @@
 'use strct';
- const Node = require('../ll-zip/node.js');
+const Node = require('../ll-zip/node.js');
 
 const LinkedList = require('../ll-zip/ll-zip.js');
 
