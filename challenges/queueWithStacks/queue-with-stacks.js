@@ -52,45 +52,32 @@ class Stack {
 
 }
 
-class Queue {
+class PseudoQueue {
   constructor() {
-    this.front = null;
-    this.rear = null;
+    this.front = new Stack();
+    this.rear = new Stack();
 
   }
 
   enqueue(node) {
     // if we just added the first item, set it as the front and the rear
     // if we added something other than the first item, it automatically gets added to the rear (FIFO)
-    if (this.isEmpty()) {
-      this.front = node;
-      this.rear = node;
+    this.rear.push(node);
 
-    } else {
-      this.rear.next = node;
-      this.rear = node;
-    }
+
   }
 
   // if we removed the last item in the queue, reset the front/rear to null
 
   // otherwise, set the front and rear to their actual positions
   dequeue() {
-    if (this.isEmpty()) {
-      return ('empty');
+    if (this.front.isEmpty()) {
+      while (!this.rear.isEmpty()) {
+        this.front.push(this.rear.pop());
+      }
     }
-    let temp = this.front;
-    this.front = temp.next;
-    return temp.value;
-  }
-  peek() {
-    if (this.front) {
-      return this.front.value;
-    }
-    return 'empty';
-  }
-  isEmpty() {
-    return this.front === null;
+
+    return this.front.pop();
   }
 
 
@@ -98,7 +85,7 @@ class Queue {
 
 module.exports = {
   stack: Stack,
-  queue: Queue,
+  queue: PseudoQueue,
   node: Node,
 };
 
