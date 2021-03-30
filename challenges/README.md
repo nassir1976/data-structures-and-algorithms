@@ -205,6 +205,8 @@ Then move head1 one step forward.
 
 # Class 10: Stack and a Queue Implementation
 
+## test  npm test stacksAndQueues
+
 # challenge 
  
 - To create a Node class that has properties for the value stored in the Node, and a pointer to the next node.
