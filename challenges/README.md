@@ -257,6 +257,8 @@ Then move head1 one step forward.
 
   # challenge 
 
+  #### test npm test ---> queue-with-stacks
+
   - to create a brand new PseudoQueue class. Do note use ab existing Queue. instead, this PseudoQueue class will implement our standard queue interface(the two methods listed below),rnsure that your class with the following methods 
    
 
