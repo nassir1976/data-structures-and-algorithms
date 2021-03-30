@@ -259,7 +259,7 @@ Then move head1 one step forward.
 
   #### test npm test ---> queue-with-stacks
 
-  - to create a brand new PseudoQueue class. Do note use ab existing Queue. instead, this PseudoQueue class will implement our standard queue interface(the two methods listed below),rnsure that your class with the following methods 
+  - to create a brand new PseudoQueue class. Do note use an existing Queue. instead, this PseudoQueue class will implement our standard queue interface(the two methods listed below),reassure that your class with the following methods 
    
 
  - enqueue(value) which inserts value into the PseudoQueue, using a first-in, first-out approch (FIFO)
