@@ -13,26 +13,27 @@ class Stack {
   // push to the top of the stack
 
   push(node) {
-    if (this.isEmpty()) {
+    if (!this.top) {
       this.top = node;
       return;
     } else {
       node.next = this.top;
       this.top = node;
+      return;
     }
 
   }
 
   // pop off the top of the stack
   pop() {
-    if (this.isEmpty()) {
+    if (!this.top) {
       return 'empty';
 
     }
     let temp = this.top;
     this.top = temp.next;
     temp.next = null;
-    return temp.value;
+    return temp;
 
   }
   // show me the top of the stack
@@ -43,13 +44,6 @@ class Stack {
     }
     return ('empty');
   }
-
-  isEmpty() {
-    return this.top === null;
-  }
-
-
-
 }
 
 class PseudoQueue {
@@ -63,6 +57,7 @@ class PseudoQueue {
     // if we just added the first item, set it as the front and the rear
     // if we added something other than the first item, it automatically gets added to the rear (FIFO)
     this.rear.push(node);
+    return this;
 
 
   }
@@ -71,20 +66,28 @@ class PseudoQueue {
 
   // otherwise, set the front and rear to their actual positions
   dequeue() {
-    if (this.front.isEmpty()) {
-      while (!this.rear.isEmpty()) {
-        this.front.push(this.rear.pop());
-      }
+    while (this.rear.top) {
+      let temp = this.rear.pop();
+      this.front.push(temp);
+    }
+    let final = this.front.pop();
+    while (this.front.top) {
+      let temp = this.front.pop();
+      this.rear.push(temp);
     }
 
-    return this.front.pop();
+
+    return final.value;
   }
-
-
 }
 
+
+
+
+
+
 module.exports = {
-  stack: Stack,
+
   queue: PseudoQueue,
   node: Node,
 };
