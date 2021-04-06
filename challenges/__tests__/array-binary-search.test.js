@@ -10,10 +10,6 @@ describe('test array-binary-search', () => {
     const binarySearch = bainarysearch([4,8,15,16,23,42], 15);
     expect(binarySearch).toEqual(2);
   });
-
-
-
-// describe('test array-binary-search',()=>{
   it('should return -1 if the number not found',()=>{
     let binarySearch = bainarysearch([15,30,45,60,75,90],106);
     expect(binarySearch).toEqual(-1);
