@@ -13,8 +13,7 @@
  - tree pre-order traversal utilizes root-left-right order 
  - tree in-order utilizes left-root-right order .
  - tree post-order utilizes left-right-root order 
- - tree maximum value function utilizers pre-order traversal and return maximum value 
- - BST add method users recursive function to compare left and right values and add a new node at appropriate place.
+  - BST add method users recursive function to compare left and right values and add a new node at appropriate place.
   
   ### type of method 
   - preorder
