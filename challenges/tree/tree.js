@@ -8,7 +8,7 @@ class Node {
     this.value = val;
     this.left = null;
     this.right = null;
-    this.next = null; // this would only be used on LL/Stack/Q
+    // this.next = null; // this would only be used on LL/Stack/Q
   }
 }
 

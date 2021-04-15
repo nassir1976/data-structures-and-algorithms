@@ -1,9 +1,12 @@
 'use strict';
 const TreeMaster = require('../tree/tree.js');
+// const Node = require('../tree/node.js');
+// const Tree = require('../tree/tree.js');
 
 const Tree = TreeMaster.tree;
 const BinarySearchTree = TreeMaster.add;
 const Node = TreeMaster.node;
+
 
 
 describe('testing Tree Class Constructor and Methods', () => {
