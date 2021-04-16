@@ -1,5 +1,5 @@
 
-
+### code -challenge 16
 ### Find the Maximum Value in a Binary Tree
  ### challenge 
  
@@ -15,11 +15,27 @@
 
   
   ### type of method 
-  - preorder
-  - postorder
-  - inorder 
+ 
 
   ## Solution
 <!-- Embedded whiteboard image -->
 ![WhiteBoard](../assets/tree3.png)
+
+
+### code -challenge 17
+
+### Breadth-first Traversal.
+
+- create a breadth first traversal method for the tree class .
+
+ ### approach and Efficiency 
+
+ - I just used a queue to traverse the tree by level in a breadth first approach.
+ ### API
+ - Tree breadth-first traversal utilizes a queue to traverse the tree by breadth level.
+  
+
+
+
+![WhiteBoard](../assets/tree4.png)
 
