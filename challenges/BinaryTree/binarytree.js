@@ -65,7 +65,7 @@ class BinaryTree {
     inOrderHelper(current);
     return array;
   }
- // =========== code challenges 16===========
+  // =========== code challenges 16===========
 
   findMaximumValue() {
     let max = 0;
@@ -86,7 +86,7 @@ class BinaryTree {
     preOrderHelper(current);
     return max;
   }
- // =========== code challenges 17===========
+  // =========== code challenges 17===========
   breadthFirst() {
     let current = null;
     let queue = [];
