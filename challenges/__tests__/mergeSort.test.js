@@ -2,6 +2,9 @@
 
 let mergeSort = require('../mergeSort/mergesort.js');
 
+
+// test on DSA(main) npm test QuickSort
+
 describe('Testing function insertionSort', () => {
   it('it should sort an array', () => {
     let arr = [8,4,23,42,16,15];
@@ -20,5 +23,4 @@ describe('Testing function insertionSort', () => {
     expect(mergeSort(arr)).toEqual([2, 3, 5, 7, 11, 13]);
   });
 });
-
 
