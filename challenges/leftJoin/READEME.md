@@ -20,4 +20,4 @@
 - Avoid utilizing any of the library methods available to your language
 
 ### Solution 
-<!-- ![WhiteBoard](../assets/mergesort.png) -->
+![WhiteBoard](../assets/leftJoin.png) 
