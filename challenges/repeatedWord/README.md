@@ -16,3 +16,5 @@
 
     - initiate a hash map to use key value pairs
 
+### solution 
+  ![WhiteBoard](../assets/repeatedword.png) 
