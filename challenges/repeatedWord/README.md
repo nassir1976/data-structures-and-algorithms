@@ -14,7 +14,7 @@
 
    - then split the sentence into indivisual words
 
-    - initiate a hash map to use key value pairs
+   - initiate a hash map to use key value pairs
 
 ### solution 
   ![WhiteBoard](../assets/repeatedword.png) 
