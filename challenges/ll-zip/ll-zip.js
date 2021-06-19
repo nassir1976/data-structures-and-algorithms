@@ -147,7 +147,6 @@ function zipList(ll1, ll2) {
 
 }
 
-// console.log(zippedList)
+
 
 module.exports = LinkedList;
-

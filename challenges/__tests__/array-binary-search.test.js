@@ -1,7 +1,4 @@
 
-
-
-
 const bainarysearch = require('../arrayBinarySearch/array-binary-search.js');
 
 describe('test array-binary-search', () => {
