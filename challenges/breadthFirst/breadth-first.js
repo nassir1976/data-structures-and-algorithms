@@ -56,57 +56,7 @@ class Graph {
     }
     return visited;
   }
-
-
-
-  depthFirst(vertex) {
-    const visitedVertices = new Set();
-    visitedVertices.add(this.vertex);
-    const traverse = (current, visited) => {
-      visitedVertices.add(current);
-      const neighbors = this.getNeighbors(current);
-      for (let neighbor of neighbors) {
-        if (!visited.has(neighbor.vertex)) {
-          traverse(neighbor.vertex, visited);
-        }
-      }
-    };
-    traverse(vertex, visitedVertices);
-    return visitedVertices;
-  }
-  size(start) {
-    let arr = this.breadthFirst(start);
-    return arr.length;
-  }
 }
-
-
-// const graph = new Graph();
-
-// const a = new Vertex('a');
-// const b = new Vertex('b');
-// const c = new Vertex('c');
-// const d = new Vertex('d');
-// const e = new Vertex('e');
-// const f = new Vertex('f');
-
-// graph.addVertex(a);
-// graph.addVertex(b);
-// graph.addVertex(c);
-// graph.addVertex(d);
-// graph.addVertex(e);
-// graph.addVertex(f);
-
-// console.log('build up graph', graph);
-
-// graph.addDirectedEdge(a, b);
-
-// console.log('one edge added', graph);
-
-// graph.addDirectedEdge(b, c);
-// graph.addDirectedEdge(c, a);
-
-// console.log('cyclical', graph);
 
 module.exports = Vertex;
 module.exports = Edge;
