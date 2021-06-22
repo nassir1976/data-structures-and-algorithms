@@ -15,22 +15,22 @@ describe('Testing the class functionality of the graph ', () => {
   it('Should add a new vertex to a graph', () => {
     let check = new Graph();
     let one = new Vertex('one');
-    check.addVertex(one);
+    check.addNode(one);
     expect(check.adjacencyList.get(one)).toBeTruthy();
   });
   it(' Add a new edge between two vertices', () => {
     let check = new Graph();
     let one = new Vertex('one');
     let two = new Vertex('two');
-    check.addVertex(one);
-    check.addVertex(two);
+    check.addNode(one);
+    check.addNode(two);
     check.addEdge(one, two);
     expect(check.adjacencyList.get(one)[0].vertex.value).toEqual(undefined);
   });
   it('TEST  able to create a graph with one vertex and an edge', () => {
     let check = new Graph();
     let one = new Vertex('one');
-    check.addVertex(one);
+    check.addNode(one);
     check.addEdge(one, undefined);
     expect(check.adjacencyList.get(one)).toBeTruthy();
     expect(check.adjacencyList.get(one).vertex).toEqual(undefined);
@@ -50,12 +50,12 @@ describe('Testing graph prototype functionality', () => {
   let five = new Vertex('five');
   let six = new Vertex('six');
 
-  check.addVertex(one);
-  check.addVertex(two);
-  check.addVertex(three);
-  check.addVertex(four);
-  check.addVertex(five);
-  check.addVertex(six);
+  check.addNode(one);
+  check.addNode(two);
+  check.addNode(three);
+  check.addNode(four);
+  check.addNode(five);
+  check.addNode(six);
 
   check.addEdge(one, three);
   check.addEdge(two, four);

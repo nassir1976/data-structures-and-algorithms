@@ -21,8 +21,12 @@ class Graph {
     this.adjacencyList = new Map(); // this is going to be used to keep track of our edges (key = some vertex // value = some edge)
   }
   // addNode(node){
-  addVertex(vertex) {
-    this.adjacencyList.set(vertex, []); // this will be used to store edges
+  // addVertex(vertex) {
+  //   this.adjacencyList.set(vertex, []); // this will be used to store edges
+  // }
+
+  addNode(node) {
+    this.adjacencyList.set(node, []); // this will be used to store edges
   }
   // addEdge // adds this edge to a set of connected verticies
   addEdge(startVertex, endVertex, weight = 0) {
